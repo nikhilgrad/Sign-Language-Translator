@@ -4,6 +4,9 @@
 ## The Idea
 The basic idea as of now is to create a sign language translator that could understand the gestures done by anyone in real-time where the input is provided through the webcam and the output should be the meaning of the gestures displayed on the screen in real-time as well. For this a model was trained on 3 basic and common gestures from the German Sign Language but it could also be leveraged using more signs or gestures to the complete **German Sign Language or Deutsche Gebärdensprache(DGS)**.
 
+![Sign Language Translator](https://github.com/user-attachments/assets/291c56f0-d883-4b56-a941-908349bb7603)
+
+
 ## Installing and importing the libraries
 First we need to install and import the necessary libraries. But before that we can also check the libraries that we already have. This can be done by running the command
 
@@ -116,6 +119,11 @@ def extract_keypoints(results):
 One thing to observe in the above code is that there is a visibility score for pose landmarks given by `res.visibility` which is absent in other types of landmarks. The other landmarks in MediaPipe do not include a visibility score is because the face and hands mesh model used by MediaPipe is designed to provide highly detailed and dense landmark points (468 for face and 21 for each hand) for facial features. These landmarks are primarily used for applications like facial recognition, hand gestures recognition etc. So the primary focus is on the precise location of each point rather than its visibility. 
 
 In contrast, the pose landmarks include a visibility score because they are used in scenarios where the visibility of body parts can vary significantly due to occlusion, movement, or camera angle. The visibility score helps to determine how reliable each landmark is, which is crucial for applications like pose estimation and activity recognition.
+
+![Markings3](https://github.com/user-attachments/assets/3d771980-0964-46e0-b985-719c3ec085b9)
+
+*Keypoints marked on face*
+
 
 ## Creating folders for collecting keypoints
 
@@ -331,7 +339,7 @@ To save the model
 model.save('sign.h5')
 ```
 
-This function, prob_viz, visualizes the probabilities of different actions on an input frame using colored rectangles and text. The `cv2.rectangle` draws the rectangle on output frame for each action probability. The rectangle’s height is fixed, but its width is proportional to the probability `(int(prob*100))`. Position of the rectangle is determined by `num`, ensuring each rectangle is drawn below the previous one. The `cv2.putText` writes the action's name in the rectangles that were drawn  
+This function `prob_viz` visualizes the probabilities of different actions on an input frame using colored rectangles and text. The `cv2.rectangle` draws the rectangle on output frame for each action probability. The rectangle’s height is fixed, but its width is proportional to the probability `(int(prob*100))`. Position of the rectangle is determined by `num`, ensuring each rectangle is drawn below the previous one. The `cv2.putText` writes the action's name in the rectangles that were drawn  
 
 ```
 colors = [(245,117,16), (117,245,16), (16,117,245)]
@@ -426,6 +434,16 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
 ```
+
+![Hallo2](https://github.com/user-attachments/assets/8dfa513c-27ae-4cdf-98f5-2bb117e744f3)
+
+![Danke2](https://github.com/user-attachments/assets/3943584f-fcf9-48ec-aa38-3daea406ff41)
+
+![Liebe2](https://github.com/user-attachments/assets/d79ec9ee-a0b0-4276-a903-70d3c4c90222)
+
+
+
+
 Then press **"interrupt the kernel"** button  and run the below code.
 
 **To release the camera and close all windows**
