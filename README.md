@@ -2,7 +2,7 @@
 **Skills learnt and applied** - Computer Vision, Time-Series data processing(Image processing & Video processing), LSTM, OpenCV, TensorFlow, Mediapipe, Matplotlib.
 
 ## The Idea
-The basic idea as of now is to create a sign language translator that could understand the gestures done by anyone in real-time where the input is provided through the webcam and the output should be the meaning of the gestures displayed on the screen in real-time as well. For this a model was trained on 3 basic and common gestures from the German Sign Language but it could also be leveraged using more signs or gestures to the complete **German Sign Language or Deutsche Gebärdensprache(DGS)**.
+The basic idea as of now is to create a sign language translator that could understand the gestures done by anyone in real-time where the input is provided through the webcam and the output should be the meaning of these gestures that would be displayed on the screen in real-time as well. For this a model was trained on 3 basic and common gestures from the German Sign Language but it could also be leveraged using more signs or gestures to complete **German Sign Language or Deutsche Gebärdensprache(DGS)**.
 
 ![Sign Language Translator](https://github.com/user-attachments/assets/291c56f0-d883-4b56-a941-908349bb7603)
 
